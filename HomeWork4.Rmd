@@ -1,0 +1,68 @@
+---
+title: "HomeWork4"
+author: "Kyle Killion"
+date: "May 30, 2016"
+output: 
+  html_document:
+    keep_md: true
+---
+### Get the bootStrap from another Normal Sample but from Size 50
+```{r}
+x <- rnorm(50,22,5)
+bootMean <- numeric(1000)
+
+for ( i in 1:1000){
+  
+  bootSamp <- sample(x, size=1000, replace=TRUE)
+  bootMean[i] <- mean(bootSamp)
+}
+hist(bootMean)
+print(quantile(bootMean, c(.025, .975)))
+```
+
+
+### Get the bootStrap from another Normal Sample but from Size 80
+```{r}
+y <- rnorm(80, 22, 5)
+bootMean2 <- numeric(1000)
+
+for (i in 1:1000){
+  
+  bootSamp2 <- sample(y, 1000, replace = TRUE)
+  bootMean2[i] <- mean(bootSamp2)
+}
+hist(bootMean2)
+print(quantile(bootMean2, c(.025, .975)))
+```
+
+### Get the bootStrap from another Exponential Sample but from Size 50
+```{r}
+
+
+x <- rexp(50, 1)
+bootMean3 <- numeric(1000)
+
+for ( i in 1:1000){
+  
+  bootSamp3 <- sample(x, size=1000, replace=TRUE)
+  bootMean3[i] <- mean(bootSamp3)
+}
+hist(bootMean3)
+print(quantile(bootMean3, c(.025, .975)))
+```
+
+### Get the bootStrap from another Exponential Sample but from Size 80
+```{r}
+x <- rexp(80,1)
+bootMean4 <- numeric(1000)
+
+for ( i in 1:1000){
+  
+  bootSamp4 <- sample(x, size=1000, replace=TRUE)
+  bootMean4[i] <- mean(bootSamp4)
+}
+hist(bootMean4)
+print(quantile(bootMean, c(.025, .975)))
+```
+
+
